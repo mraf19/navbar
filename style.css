@@ -1,0 +1,122 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eaeaea;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    background-color: rgb(10, 46, 247);
+    color: rgb(0, 247, 255)
+}
+nav .logo {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 247, 255);
+}
+
+nav ul li a:hover {
+    color: rgb(194, 248, 250);
+}
+
+nav .menu-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 16px ;
+   
+}
+
+nav .menu-toggle span {
+    display: block;
+    background-color: rgb(0, 247, 255);
+    width: 28px;
+    height: 3px;
+    transition: all 0.5s;
+}
+
+nav .menu-toggle span:first-child{
+    transform-origin: 0 0;
+}
+
+nav .menu-toggle span:last-child{
+    transform-origin: 0 100%;
+}    
+
+nav .menu-toggle.spanTransform > span:nth-child(1) {
+    transform: rotate(45deg) translate(-2.5px,-2.5px);
+}
+nav .menu-toggle.spanTransform > span:nth-child(2) {
+    transform: scale(0);
+}
+nav .menu-toggle.spanTransform > span:nth-child(3) {
+    transform: rotate(-45deg) translate(-2.5px,0)
+}
+
+
+
+
+
+
+
+
+/* Responsive/ */
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(10, 46, 247);
+        z-index: -8;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    nav .menu-toggle{
+        display: flex;
+    }
+
+
+
+}
